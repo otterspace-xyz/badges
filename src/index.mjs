@@ -47,7 +47,6 @@ async function sign(value, data, chainId) {
     data,
     chainId,
   };
-  console.log(tx);
 
   const txHash = await ethereum.request({
     method: "eth_sendTransaction",
@@ -65,7 +64,9 @@ createComponent(
       const inputs = Object.fromEntries(new FormData(e.target).entries());
       const value = "0x00";
       const chainId = "0x4"; // rinkeby
-      const data = `0xd0def521000000000000000000000000${inputs.to}0000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000005968747470733a2f2f6261666b726569656473693266616c697866646f6d73377278687a6d6175716f653232726a7471366761623364766e366c756f376b7533646d7a792e697066732e6e667473746f726167652e6c696e6b2f00000000000000`;
+      const data = `0xd0def521000000000000000000000000${inputs.to.slice(
+        2
+      )}0000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000005968747470733a2f2f6261666b726569656473693266616c697866646f6d73377278687a6d6175716f653232726a7471366761623364766e366c756f376b7533646d7a792e697066732e6e667473746f726167652e6c696e6b2f00000000000000`;
       await sign(value, data, chainId);
     },
     render() {
@@ -73,7 +74,7 @@ createComponent(
       return html`
         <form onsubmit=${this.onSubmit}>
           To:
-          <input name="to" type="text" />
+          <input placeholder="ethereum address: 0x..." name="to" type="text" />
           <br />
           Image URI:
           https://bafkreiedsi2falixfdoms7rxhzmauqoe22rjtq6gab3dvn6luo7ku3dmzy.ipfs.nftstorage.link/
