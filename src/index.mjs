@@ -66,20 +66,26 @@ createComponent(
       const chainId = "0x4"; // rinkeby
       const data = `0xd0def521000000000000000000000000${inputs.to.slice(
         2
-      )}0000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000005968747470733a2f2f6261666b726569656473693266616c697866646f6d73377278687a6d6175716f653232726a7471366761623364766e366c756f376b7533646d7a792e697066732e6e667473746f726167652e6c696e6b2f00000000000000`;
+      )}0000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000002a68747470733a2f2f6170692e6e706f696e742e696f2f376133383061643535363566323566316265303700000000000000000000000000000000000000000000`;
       await sign(value, data, chainId);
     },
     render() {
       const { account } = this.store.state;
       return html`
         <form onsubmit=${this.onSubmit}>
-          To:
-          <input placeholder="ethereum address: 0x..." name="to" type="text" />
-          <br />
-          Image URI:
-          https://bafkreiedsi2falixfdoms7rxhzmauqoe22rjtq6gab3dvn6luo7ku3dmzy.ipfs.nftstorage.link/
-          <br />
-
+          ${account
+            ? html`
+                To:
+                <input
+                  placeholder="ethereum address: 0x..."
+                  name="to"
+                  type="text"
+                />
+                <br />
+                TokenURI: https://api.npoint.io/7a380ad5565f25f1be07
+                <br />
+              `
+            : ""}
           ${account ? "" : html`<web3-connect-metamask><//>`}
           ${account ? html`<input type="submit" value="Mint SBT" />` : ""}
         </form>
