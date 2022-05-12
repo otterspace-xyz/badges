@@ -4,7 +4,7 @@
   "description": "web3-input is the parsimonious way to interact with Ethereum.",
   "main": "./src/index.mjs",
   "scripts": {
-    "build": "esbuild src/index.mjs --outfile=web3-input.js --bundle --minify --sourcemap --target=chrome58,firefox57,safari11,edge16",
+    "build": "esbuild src/index.mjs --outfile=web3-input.js --bundle --minify --sourcemap --target=es2020",
     "serve": "ssl-serve . --ssl",
     "watch": "watch 'npm run build' ./src/ -d",
     "dev": "concurrently 'npm run watch' 'npm run serve'"
@@ -34,6 +34,7 @@
   "dependencies": {
     "@ficusjs/renderers": "3.1.0",
     "@metamask/detect-provider": "1.2.0",
+    "esbuild": "0.14.39",
     "ficusjs": "3.3.0"
   },
   "devDependencies": {

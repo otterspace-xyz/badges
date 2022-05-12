@@ -1,6 +1,6 @@
 // @format
 import detectEthereumProvider from "@metamask/detect-provider";
-import { html, renderer } from "@ficusjs/renderers/dist/htm";
+import { html, renderer } from "./htm.mjs";
 import { createComponent, createAppState, withStore } from "ficusjs";
 
 const store = createAppState("web3.sign", {
@@ -8,15 +8,15 @@ const store = createAppState("web3.sign", {
     account: null,
     signature: null,
     web3: {
-      provider: null
-    }
+      provider: null,
+    },
   },
   setAccount(val) {
     this.state.account = val;
   },
   setSignature(val) {
     this.state.signature = val;
-  }
+  },
 });
 
 createComponent(
@@ -31,9 +31,11 @@ createComponent(
     },
     render() {
       return html`
-			<button type="button" onclick=${this.handleConnect}>Connect Wallet</button>
-  `;
-    }
+        <button type="button" onclick=${this.handleConnect}>
+          Connect Wallet
+        </button>
+      `;
+    },
   })
 );
 
@@ -44,8 +46,8 @@ createComponent(
     props: {
       message: {
         type: String,
-        required: true
-      }
+        required: true,
+      },
     },
     async handleSign() {
       const { message } = this.props;
@@ -56,9 +58,9 @@ createComponent(
     },
     render() {
       return html`
-			<button type="button" onclick=${this.handleSign}>Sign</button>
-  `;
-    }
+        <button type="button" onclick=${this.handleSign}>Sign</button>
+      `;
+    },
   })
 );
 
@@ -69,21 +71,21 @@ createComponent(
     props: {
       message: {
         type: String,
-        required: true
-      }
+        required: true,
+      },
     },
     render() {
       const { account, signature } = this.store.state;
       const { message } = this.props;
       return html`
-			<div>
-				<p>Message: ${message}</p>
-				<p>Signature: ${signature}</p>
-				${account ? "" : html`<web3-connect-metamask><//>`}
-				${account ? html`<web3-sign-button message=${message}><//>` : ""}
-			</div>
-  `;
-    }
+        <div>
+          <p>Message: ${message}</p>
+          <p>Signature: ${signature}</p>
+          ${account ? "" : html`<web3-connect-metamask><//>`}
+          ${account ? html`<web3-sign-button message=${message}><//>` : ""}
+        </div>
+      `;
+    },
   })
 );
 
@@ -107,9 +109,9 @@ async function sign(provider, from, msg) {
       {
         method: "personal_sign",
         params: [msg, from],
-        from
+        from,
       },
-      function(err, result) {
+      function (err, result) {
         if (err) {
           reject(err);
         }
