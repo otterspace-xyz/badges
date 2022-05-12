@@ -34,8 +34,12 @@
   "dependencies": {
     "@ficusjs/renderers": "3.1.0",
     "@metamask/detect-provider": "1.2.0",
+    "assert": "2.0.0",
+    "buffer": "6.0.3",
     "esbuild": "0.14.39",
-    "ficusjs": "3.3.0"
+    "ficusjs": "3.3.0",
+    "stream-browserify": "3.0.0",
+    "web3-eth-abi": "1.7.3"
   },
   "devDependencies": {
     "concurrently": "6.0.2",
