@@ -1,9 +1,7 @@
-# web3-input
+# badges
 
-> web3-input is the parsimonious way to interact with Ethereum.
+super fast hack that uses eip-4973 token based on https://github.com/rugpullindex/ERC4973 and https://github.com/ethereum/EIPs/pull/4973
 
-## run
+Can show up on metamask mobile if you import the nft
 
-Status: Demo
-
-Run it by cloning the repo and then running `npm run dev`.
+![signal-2022-05-12-174638_001](https://user-images.githubusercontent.com/2758453/168123687-16e9c51c-8c4f-446a-8bcb-19ea3ac4eeca.jpeg)
