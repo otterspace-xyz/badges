@@ -2,15 +2,37 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>EIP-4973 Account-bound tokens</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Otterspace Badges - Sound Bound Tokens</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/src/base.css" />
     <script src="./web3-input.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Mint an an Otterspace test badge as a Soul Bound Token / Account Bound token / Non-transferable NFT, per EIP-4973."
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="/favicon.ico" />
   </head>
-  <body>
-    <h1>Mint some EIP-4973 Account-bound tokens</h1>
-    Send an otterbadge account-bound token to a friend! Only works on the
-    Rinkeby network.
-    <web3-abt-form> </web3-abt-form>
-    <a href="https://www.otterspace.xyz/">Check out Otterspace 🦦</a>
+  <body class="container grid mx-auto gap-10 text-center content-center">
+    <div class="grid h-24">
+      <img src="/logo.png" alt="Otterspace" class="h-24 justify-self-center" />
+    </div>
+    <div class="text-center grid gap-6 bg-white rounded-lg p-10">
+      <h1 class="text-2xl">Mint an Otter for your Soul 👻 </h1>
+      <p>
+        A Soul Otter is an Otter bound to your soul. It is a Non-Transferable NFT, which is also sometimes referred to as a Soul Bound Token or an Account Bound Token.
+      </p>
+      <web3-abt-form class=""></web3-abt-form>
+    </div>
+    <div class="text-lg">
+      <a href="https://www.otterspace.xyz/" class="underline"
+        >Made with ❤️ by Otterspace 🦦</a
+      >
+    </div>
   </body>
 </html>

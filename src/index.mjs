@@ -31,7 +31,11 @@ createComponent(
     },
     render() {
       return html`
-        <button type="button" onclick=${this.handleConnect}>
+        <button
+          type="button"
+          onclick=${this.handleConnect}
+          class="button px-4 py-2 text-white rounded bg-purple-500"
+        >
           Connect Wallet
         </button>
       `;
@@ -72,22 +76,31 @@ createComponent(
     render() {
       const { account } = this.store.state;
       return html`
-        <form onsubmit=${this.onSubmit}>
+        <form onsubmit=${this.onSubmit} class="grid gap-6">
           ${account
             ? html`
-                To:
-                <input
-                  placeholder="ethereum address: 0x..."
-                  name="to"
-                  type="text"
-                />
-                <br />
-                TokenURI: https://api.npoint.io/7a380ad5565f25f1be07
-                <br />
+                <div>
+                  To: 
+                  <input
+                    placeholder="ethereum address: 0x..."
+                    name="to"
+                    type="text"
+                    class=""
+                  />
+                </div>
+                <div class>TokenURI: https://api.npoint.io/7a380ad5565f25f1be07</div>
               `
             : ""}
           ${account ? "" : html`<web3-connect-metamask><//>`}
-          ${account ? html`<input type="submit" value="Mint SBT" />` : ""}
+          ${account
+            ? html`<div>
+                <input
+                  class="button px-4 py-2 text-white rounded bg-purple-500 cursor-pointer"
+                  type="submit"
+                  value="Mint a Soul Otter 👻 🦦"
+                />
+              </div>`
+            : ""}
         </form>
       `;
     },
