@@ -11,7 +11,7 @@ This repository hosts the code for Otterspace's
 Ohlhaver and Buterin's "[Decentralized Society: Finding Web3's
 Soul](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4105763)" paper.
 
-We're created a [EIP-4973-compliant account-bound token
+We created a [EIP-4973-compliant account-bound token
 contract](https://github.com/otterspace-xyz/otterspace-contracts). We allow
 users to mint a token on the Rinkeby Testnetwork to other's addresses.
 
