@@ -4,7 +4,7 @@ import { html, renderer } from "./vendors/htm.mjs";
 import { createComponent, createAppState, withStore } from "ficusjs";
 
 const contract = {
-  address: "0x8cdd98f3cb847d0c064f7e08ce14bec3e20de2f4",
+  address: "0x9a8469255a7d41A715E539a22Eb1127be0973A1E",
   functions: {
     mint: "6a627842000000000000000000000000",
   },
@@ -90,7 +90,13 @@ createComponent(
                   />
                 </div>
                 <div class>
-                <span class="font-bold pr-2">Token URI: </span> https://api.npoint.io/7a380ad5565f25f1be07</div>
+                <span class="font-bold pr-2">TokenURI on IPFS: </span>
+                  <a
+                    href="https://ipfs.io/ipfs/QmdoUaYzKCMUmeH473amYJNyFrL1a6gtccQ5rYsqqeHBsC"
+                  >
+                    QmdoUaYzKCMUmeH473amYJNyFrL1a6gtccQ5rYsqqeHBsC
+                  </a>
+                </div>
               `
             : ""}
           ${account ? "" : html`<web3-connect-metamask><//>`}
