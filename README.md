@@ -1,5 +1,7 @@
 # otterspace-badges
 
+![image](https://user-images.githubusercontent.com/2758453/168291832-6cfb8266-2d4a-4850-9044-82b4e597ddc9.png)
+
 ### An [EIP-4973](https://github.com/ethereum/EIPs/pull/4973)-compliant Account-bound token frontend to otterify Ethereum.
 
 ## Project Information
