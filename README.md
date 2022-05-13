@@ -1,7 +1,35 @@
-# badges
+# otterspace-badges
 
-super fast hack that uses eip-4973 token based on https://github.com/rugpullindex/ERC4973 and https://github.com/ethereum/EIPs/pull/4973
+### An [EIP-4973](https://github.com/ethereum/EIPs/pull/4973)-compliant Account-bound token frontend to otterify Ethereum.
 
-Can show up on metamask mobile if you import the nft
+## Project Information
 
-![signal-2022-05-12-174638_001](https://user-images.githubusercontent.com/2758453/168123687-16e9c51c-8c4f-446a-8bcb-19ea3ac4eeca.jpeg)
+This repository hosts the code for Otterspace's
+[EIP-4973](https://otterspace-xyz.github.io/badges/) demo in response to Weyl,
+Ohlhaver and Buterin's "[Decentralized Society: Finding Web3's
+Soul](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4105763)" paper.
+
+We're created a [EIP-4973-compliant account-bound token
+contract](https://github.com/otterspace-xyz/otterspace-contracts). We allow
+users to mint a token on the Rinkeby Testnetwork to other's addresses.
+
+The frontend is live at
+[https://otterspace-xyz.github.io/badges/](https://otterspace-xyz.github.io/badges/).
+
+## Installation & Contributing
+
+### Prerequisites
+
+- Please use node v12
+
+```bash
+git clone git@github.com:otterspace-xyz/badges.git
+npm i
+npm run dev
+```
+
+The front end is then accessible at https://localhost:5000 (only https!).
+
+## License
+
+See LICENSE file.

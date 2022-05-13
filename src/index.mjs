@@ -4,7 +4,10 @@ import { html, renderer } from "./vendors/htm.mjs";
 import { createComponent, createAppState, withStore } from "ficusjs";
 
 const contract = {
-  address: "0x1c504d230620b4c208d2ed6fa2f58e4f432b3c78",
+  address: "0x8cdd98f3cb847d0c064f7e08ce14bec3e20de2f4",
+  functions: {
+    mint: "6a627842000000000000000000000000",
+  },
 };
 
 const store = createAppState("web3.sign", {
@@ -68,9 +71,7 @@ createComponent(
       const inputs = Object.fromEntries(new FormData(e.target).entries());
       const value = "0x00";
       const chainId = "0x4"; // rinkeby
-      const data = `0xd0def521000000000000000000000000${inputs.to.slice(
-        2
-      )}0000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000002a68747470733a2f2f6170692e6e706f696e742e696f2f376133383061643535363566323566316265303700000000000000000000000000000000000000000000`;
+      const data = `0x${contract.functions.mint}${inputs.to.slice(2)}`;
       await sign(value, data, chainId);
     },
     render() {
