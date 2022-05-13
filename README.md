@@ -14,7 +14,7 @@ contract](https://github.com/otterspace-xyz/otterspace-contracts). We allow
 users to mint a token on the Rinkeby Testnetwork to other's addresses.
 
 The frontend is live at
-[https://otterspace-xyz.github.io/badges/](https://otterspace-xyz.github.io/badges/).
+[https://badges.otterspace.xyz/](https://badges.otterspace.xyz/).
 
 ## Installation & Contributing
 
