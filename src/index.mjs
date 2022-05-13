@@ -81,7 +81,7 @@ createComponent(
           ${account
             ? html`
                 <div>
-                  To: 
+                  <span class="font-bold pr-2">Send a Soul Otter to: </span>
                   <input
                     placeholder="ethereum address: 0x..."
                     name="to"
@@ -89,14 +89,15 @@ createComponent(
                     class=""
                   />
                 </div>
-                <div class>TokenURI: https://api.npoint.io/7a380ad5565f25f1be07</div>
+                <div class>
+                <span class="font-bold pr-2">Token URI: </span> https://api.npoint.io/7a380ad5565f25f1be07</div>
               `
             : ""}
           ${account ? "" : html`<web3-connect-metamask><//>`}
           ${account
             ? html`<div>
                 <input
-                  class="button px-4 py-2 text-white rounded bg-purple-500 cursor-pointer"
+                  class="button px-4 py-2 text-white rounded bg-purple-600 cursor-pointer"
                   type="submit"
                   value="Mint a Soul Otter 👻 🦦"
                 />
