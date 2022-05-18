@@ -37,7 +37,7 @@ createComponent(
         <button
           type="button"
           onclick=${this.handleConnect}
-          class="button px-4 py-2 text-white rounded bg-purple-500"
+          class="button px-4 py-2 text-white rounded bg-purple-600"
         >
           Connect Wallet
         </button>
@@ -80,30 +80,22 @@ createComponent(
         <form onsubmit=${this.onSubmit} class="grid gap-6">
           ${account
             ? html`
-                <div>
+                <div class="grid justify-center">
                   <span class="font-bold pr-2">Send a Soul Otter to: </span>
                   <input
-                    placeholder="ethereum address: 0x..."
+                    placeholder="Enter ethereum address: 0x..."
                     name="to"
                     type="text"
-                    class=""
+                    class="appearance-none block w-72 px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   />
-                </div>
-                <div class>
-                <span class="font-bold pr-2">TokenURI on IPFS: </span>
-                  <a
-                    href="https://ipfs.io/ipfs/QmdoUaYzKCMUmeH473amYJNyFrL1a6gtccQ5rYsqqeHBsC"
-                  >
-                    QmdoUaYzKCMUmeH473amYJNyFrL1a6gtccQ5rYsqqeHBsC
-                  </a>
                 </div>
               `
             : ""}
           ${account ? "" : html`<web3-connect-metamask><//>`}
           ${account
-            ? html`<div>
+            ? html` <div class="grid gap-4 justify-center">
                 <input
-                  class="button px-4 py-2 text-white rounded bg-purple-600 cursor-pointer"
+                  class="button px-4 py-2 text-white rounded bg-purple-600 cursor-pointer w-64"
                   type="submit"
                   value="Mint a Soul Otter 👻 🦦"
                 />
